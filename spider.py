@@ -6,7 +6,8 @@ def main():
     """
     Main function of sqlmap when running from command line.
     """
-    commandLineArgument()
+    (options,args)=commandLineArgument()
+
     
 
 
