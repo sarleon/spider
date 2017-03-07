@@ -1,3 +1,3 @@
 
 class craber:
-    self
+    pass
