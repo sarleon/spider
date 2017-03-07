@@ -1,3 +1,0 @@
-
-class craber:
-    pass
