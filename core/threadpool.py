@@ -21,7 +21,7 @@ class ThreadPool(object):
 
     def __init_work_queue(self, work_num):
         for i in range(work_num):
-            self.add_job(job)
+            self.add_job()
 
     def __init_thread_pool(self, thread_num):
         for i in range(thread_num):

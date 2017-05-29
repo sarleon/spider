@@ -30,17 +30,22 @@ class Scraber:
         page=requests.get(url,cookies=self.cookies,headers=self.headers)
 
         #如果不是页面而是其他资源则返回
+
         if 'text/html' not in page.headers['Content-Type']:
             return False
 
         if not self.regex:
             pass
         else:
-            pass
+            pattern=re.compile(self.regex)
+            match=re.search(pattern,page.text)
+            if not match:
+                return False
+
 
 
         #从页面中找新的链接
         link_regex=re.compile('<a href="(.*)">.*</a>')
         links=re.findall(link_regex,page.text)
-
+        self.url_list.append(links)
         return page.text
